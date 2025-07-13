@@ -50,11 +50,11 @@ export const SearchBar = () => {
           <img
             src="/images/logo.png"
             alt="Logo"
-            className="w-[134px] h-auto object-contain"
+            className="ml-5 w-[134px] h-auto object-contain"
           />
         </Link>
 
-        <div className="relative flex-1 max-w-[580px] w-full">
+        <div className="relative w-full max-w-[580px] sm:max-w-[400px] md:flex-1">
           <input
             type="text"
             placeholder="Buscar productos, marcas y más..."
