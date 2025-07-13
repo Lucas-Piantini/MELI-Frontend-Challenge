@@ -1,22 +1,25 @@
+# MELI Frontend Challenge
+
 Este repositorio contiene la solución al test práctico de frontend proporcionado por Mercado Libre.
 
-## Link del proyecto deployado Vercel!
-- https://meli-frontend-challenge-itpe6z9rz-wawis-projects-253f345d.vercel.app/
+## 🔗 Link del proyecto desplegado en Vercel
+
+https://meli-frontend-challenge-itpe6z9rz-wawis-projects-253f345d.vercel.app/
 
 ## 💡 Descripción
 
-La aplicación simula una versión reducida del sitio de Mercado Libre. Permite a los usuarios buscar productos, ver resultados con paginación, y acceder al detalle de cada producto (Por las limitaciones del mock proporcionado solo el primer resultado muestra datos, los demas arrojan error).
+La aplicación simula una versión reducida del sitio de Mercado Libre. Permite a los usuarios buscar productos, ver resultados con paginación y acceder al detalle de cada producto.
+
+> Por las limitaciones del mock proporcionado, solo el primer resultado muestra datos; los demás arrojan error.
 
 ## 🚀 Funcionalidades implementadas
 
 - 🔍 Barra de búsqueda con historial reciente (almacenado en `localStorage`).
 - 🛍️ Listado de productos filtrados y paginados.
 - 📄 Página de detalle de producto con imágenes y descripción.
-- 💰 Información monetaria con cuotas, envío, precio original y descuento.
-- ⭐ Calificaciones y reviews.
-- 🧪 Test unitarios y de integración con cobertura.
+- 🧪 Tests unitarios e integración con cobertura.
 
-## 🧱 Tech stack
+## 🧱 Stack tecnológico
 
 - React
 - React Router
@@ -25,17 +28,14 @@ La aplicación simula una versión reducida del sitio de Mercado Libre. Permite 
 - Vitest + Testing Library (testeo)
 - TypeScript
 
-Decidi usar Zustand en vez de Redux por que es una herramienta que me gusta mucho para manejar el estado global
-del proyecto, aun que es cierto que no era estrictamente necesario para un proyecto de este tamaño lo quize integrar
-por temas de escabilidad sobre todo con la feature de la busqueda en la que se pueden ampliar de tantas formas
+### 📌 Decisiones técnicas
 
-Decidi usar Tailwind por que es una herramienta muy buena para proyectos pequeños ya que a coste de un poco de ruido en
-el HTML permite la creacion rapida de una interfaz estetica y con menos archivos. si el proyecto estuviera pensado a mas
-grande escala podria optar por no usarla.
+- **Zustand**: preferí Zustand sobre Redux porque es una herramienta ligera y eficiente para manejar estado global. Aunque no era estrictamente necesario en un proyecto de este tamaño, lo integré pensando en la escalabilidad, especialmente para la funcionalidad de búsqueda, que podría crecer con más filtros y lógica.
+- **Tailwind CSS**: lo elegí por su rapidez de desarrollo y bajo overhead para proyectos pequeños. Si este proyecto creciera en tamaño, consideraría usar estilos modulares o una solución CSS-in-JS para mejor mantenibilidad.
 
-Use Vitest en vez de Jest por que al usar Vite para levantar el proyecto es la herramienta ideal de testeo
+- **Vitest**: al utilizar Vite como bundler, Vitest fue la opción más natural y rápida para las pruebas.
 
-Use Typescript para que el codigo sea mas robusto y menos propenso a errores
+- **TypeScript**: para mejorar la robustez del código, evitar errores comunes y mejorar la DX (developer experience).
 
 ## 📦 Instalación
 
@@ -44,9 +44,9 @@ git clone https://github.com/goncy/mercadolibre-details-challenge.git
 cd meli-frontend-challenge
 npm install
 npm run dev
-
 ```
-## 🔧 Test
+
+## 🔧 Tests
 
 ```bash
 npm run test
@@ -72,24 +72,20 @@ src/
 ## 📄 Consideraciones
 
 - Se usan mocks locales (`/mock/*.json`) para simular la API de MELI.
-- Se introdujo un `setTimeout` artificial de 2s para simular latencia real.
-- El diseño intenta respetar la estética de Mercado Libre sin depender de su diseño exacto.
-- El código es modular y escalable con separación clara por responsabilidades.
+- Se introdujo un `setTimeout` artificial de 2 segundos para simular latencia real.
+- El diseño intenta respetar la estética de Mercado Libre sin replicarla exactamente.
+- El código está estructurado de forma modular y escalable, con una clara separación de responsabilidades.
 
+## 🛠️ Mejoras futuras
 
-Si tuviera mas tiempo me gustaria:
-- Pulir mas la feature del detalle del producto dandole algun tipo de estado con Zustand 
-para facilitar la lectura del codigo.
+Si tuviera más tiempo me gustaría:
 
-- Llevar el test coverage a un numero mas alto e incluir pruebas integrales
+- Pulir más la vista de detalle del producto, dándole estado con Zustand para simplificar el flujo de datos.
+- Aumentar la cobertura de tests e incluir pruebas de integración más completas.
+- Crear una interfaz responsive más elaborada, no solo reubicando elementos sino usando componentes específicos para mobile.
+- Ampliar el mock para que la barra de búsqueda permita filtrar por categorías, y para que más productos tengan datos completos.
+- Añadir una sección de productos destacados en la Home con un diseño de tarjeta alternativo.
 
-- Crear una estetica responsive mas compleja a que solo se muevan los componentes para que
-  entren a la pantalla si no tener componentes especializados para el formato en el que se consume la app
+---
 
-- Editar a profundidad el Mock para incluir mas funcionalidades como filtrar la barra de busqueda o que los productos
-  tengan mas categorias
-
-- Agregar productos en la Home con otro diseño de Card  
-
-
-Desarrollado por Lucas Piantini para el challenge técnico de Mercado Libre.
+Desarrollado por **Lucas Piantini** para el challenge técnico de Mercado Libre.
