@@ -17,7 +17,7 @@ export const fetchFilteredProducts = async (
     throw new Error("Error al cargar productos");
   }
 
-  const data: Product = await res.json();
+  const data: { results: Product[] } = await res.json();
 
   const filtered = data.results.filter((p: Product) =>
     p.title.toLowerCase().includes(query.toLowerCase())
