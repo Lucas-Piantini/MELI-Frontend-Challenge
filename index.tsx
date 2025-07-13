@@ -1,10 +1,10 @@
-import ProductDetailPage from "../features/ProductDetail/ProductDetailPage";
+import ProductDetailPage from "./src/features/ProductDetail/ProductDetailPage";
 import { Routes, Route } from "react-router-dom";
-import { MainLayout } from "../layouts/MainLayout";
-import ProductsList from "../features/ProductsList/ProductsList";
-import HomeScreen from "../features/HomeScreen/HomeScreen";
-import ProductsNotFound from "../features/ProductsList/Components/ProductsNotFound/EmptyScreen";
-import ErrorScreen from "../features/ErrorScreen/ErrorScreen";
+import { MainLayout } from "./src/layouts/MainLayout";
+import ProductsList from "./src/features/ProductsList/ProductsList";
+import HomeScreen from "./src/features/HomeScreen/HomeScreen";
+import ProductsNotFound from "./src/features/ProductsList/Components/ProductsNotFound/EmptyScreen";
+import ErrorScreen from "./src/features/ErrorScreen/ErrorScreen";
 
 export default function AppRoutes() {
   return (

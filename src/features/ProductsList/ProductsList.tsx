@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSearchStore } from "../../stores/SearchStore";
 import SearchProductCard from "./Components/SearchProductCard/SearchProductCard";
-import Paginator from "./Components/Paginator/Paginator";
+import Paginator from "../../Components/Paginator/Paginator";
 import ProductListSkeleton from "./Components/ProductListSkeleton/ProductListSkeleton";
 
 const ProductsList = () => {

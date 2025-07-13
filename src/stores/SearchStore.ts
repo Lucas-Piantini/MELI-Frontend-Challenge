@@ -1,26 +1,6 @@
 import { create } from "zustand";
-import { Product } from "../types/product";
 import { fetchFilteredProducts } from "../services/productService";
-
-interface Paging {
-  total: number;
-  offset: number;
-  limit: number;
-}
-
-interface SearchState {
-  query: string;
-  products: Product[];
-  isLoading: boolean;
-  error: string | null;
-  hasSearched: boolean;
-  recentSearches: string[];
-  paging: Paging;
-  search: (query: string, offset?: number) => Promise<void>;
-  setQuery: (value: string) => void;
-  clear: () => void;
-  addRecentSearch: (query: string) => void;
-}
+import type { SearchState } from "./SearchStore.types";
 
 export const useSearchStore = create<SearchState>((set, get) => {
   const storedSearches = localStorage.getItem("recentSearches");

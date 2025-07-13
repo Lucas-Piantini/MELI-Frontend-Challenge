@@ -1,4 +1,5 @@
-import StarRating from "../../../StarRating/StarRating";
+import Button from "../../../../Components/Button/Button";
+import StarRating from "../../../../Components/StarRating/StarRating";
 import MonetaryDetailsProps from "./MonetaryDetails.types";
 
 const MonetaryDetails = ({
@@ -46,12 +47,8 @@ const MonetaryDetails = ({
         {seller_address.state.name}
       </p>
       <p className="text-sm text-gray-700 mb-4">{warranty}</p>
-      <button className="bg-blue-500 text-white py-2 px-4 rounded w-full mt-4 hover:bg-blue-600">
-        Comprar ahora
-      </button>
-      <button className="text-meliBlue py-2 px-4 rounded w-full mt-4 bg-gray-200 hover:bg-gray-300">
-        Agregar al carrito
-      </button>
+      <Button label="Comprar ahora" variant="primary" />
+      <Button label="Agregar al carrito" variant="secondary" />
     </div>
   );
 };

@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSearchStore } from "../../stores/SearchStore";
 import SearchbarPromo from "./Components/SearchbarPromo";
 import DropdownHistory from "./DropdownHistory/DropdownHistory";
+import { MagnifierIcon } from "../../Components/Icons";
 
 export const SearchBar = () => {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ export const SearchBar = () => {
     e.preventDefault();
     const trimmed = query.trim();
     if (trimmed.length < 3) return;
-
+    setIsFocused(false);
     clear();
     search(trimmed);
     navigate(`/products/${trimmed}`);
@@ -52,6 +53,7 @@ export const SearchBar = () => {
             className="w-[134px] h-auto object-contain"
           />
         </Link>
+
         <div className="relative flex-1 max-w-[580px] w-full">
           <input
             type="text"
@@ -63,12 +65,11 @@ export const SearchBar = () => {
             className="shadow-sm w-full px-4 py-2 border border-transparent focus:outline-none focus:ring-1 focus:ring-[#3483fa]"
           />
 
-          {/* Lupa */}
           <button
             type="submit"
             className="absolute right-3 top-1/2 -translate-y-1/2"
           >
-            <img src="/images/magnifier.svg" alt="Buscar" className="w-4 h-4" />
+            <MagnifierIcon className="w-4 h-4 text-gray-500" />
           </button>
 
           {isFocused && recentSearches.length > 0 && (

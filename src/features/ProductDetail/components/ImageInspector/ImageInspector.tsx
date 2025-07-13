@@ -1,11 +1,16 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 interface Props {
   pictures: { id: string; url: string }[];
   title: string;
+  onZoomChange?: (
+    visible: boolean,
+    currentImage: string,
+    bgPosition: string
+  ) => void;
 }
 
-const ImageInspector = ({ pictures, title }: Props) => {
+const ImageInspector = ({ pictures = [], title, onZoomChange }: Props) => {
   const [selImg, setSelImg] = useState<string>(pictures?.[0]?.url || "");
   const [zoomVisible, setZoomVisible] = useState(false);
   const [bgPosition, setBgPosition] = useState("0% 0%");
@@ -15,7 +20,8 @@ const ImageInspector = ({ pictures, title }: Props) => {
   const lensRef = useRef<HTMLDivElement>(null);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
+    const { left, top, width, height } =
+      e.currentTarget.getBoundingClientRect();
     const x = e.clientX - left;
     const y = e.clientY - top;
     const xPercent = (x / width) * 100;
@@ -24,10 +30,16 @@ const ImageInspector = ({ pictures, title }: Props) => {
     setLensPos({ x, y });
   };
 
+  // Notificar al padre
+  useEffect(() => {
+    onZoomChange?.(zoomVisible, selImg, bgPosition);
+  }, [zoomVisible, selImg, bgPosition]);
+
   return (
     <div className="flex gap-4 relative">
+      {/* Miniaturas */}
       <div className="flex flex-col gap-2">
-        {pictures.map((pic) => (
+        {pictures.slice(0, 7).map((pic) => (
           <img
             key={pic.id}
             src={pic.url}
@@ -35,13 +47,19 @@ const ImageInspector = ({ pictures, title }: Props) => {
             className={`w-16 h-16 object-contain cursor-pointer border ${
               selImg === pic.url ? "border-blue-500" : "border-gray-300"
             }`}
-            onClick={() => setSelImg(pic.url)}
+            onMouseEnter={() => setSelImg(pic.url)}
           />
         ))}
+        {pictures.length > 7 && (
+          <div className="w-16 h-16 border border-gray-300 bg-gray-100 text-sm font-medium text-gray-700 flex items-center justify-center">
+            +{pictures.length - 7}
+          </div>
+        )}
       </div>
 
+      {/* Imagen principal */}
       <div
-        className="w-[400px] h-[400px] border relative overflow-hidden cursor-zoom-in"
+        className="h-[500px] relative overflow-hidden cursor-zoom-in w-full bg-gray-100 rounded-md"
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setZoomVisible(true)}
         onMouseLeave={() => setZoomVisible(false)}
@@ -62,18 +80,6 @@ const ImageInspector = ({ pictures, title }: Props) => {
           />
         )}
       </div>
-
-      {zoomVisible && (
-        <div
-          ref={zoomRef}
-          className="absolute left-[460px] top-0 w-[400px] h-[400px] border bg-no-repeat bg-contain z-50"
-          style={{
-            backgroundImage: `url(${selImg})`,
-            backgroundSize: "200%",
-            backgroundPosition: bgPosition,
-          }}
-        />
-      )}
     </div>
   );
 };

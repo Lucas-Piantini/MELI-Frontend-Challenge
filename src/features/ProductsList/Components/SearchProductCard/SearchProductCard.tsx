@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import type { Product } from "../../../../types/product";
-import StarRating from "../../../StarRating/StarRating";
+import StarRating from "../../../../Components/StarRating/StarRating";
 
 const ProductCard = ({ product }: { product: Product }) => {
   const {

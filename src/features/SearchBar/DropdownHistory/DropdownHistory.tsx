@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useSearchStore } from "../../../stores/SearchStore";
+import { ClockIcon } from "../../../Components/Icons/index";
 
 interface Props {
   setIsFocused: (value: boolean) => void;
@@ -28,7 +29,7 @@ const DropdownHistory = ({ setIsFocused }: Props) => {
           onClick={() => handleSelectRecent(item)}
           className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 cursor-pointer"
         >
-          <img src="/images/clock.svg" alt="clock" className="w-4 h-4" />
+          <ClockIcon className="w-5 h-5 text-gray-400" />
           <span>{item}</span>
         </li>
       ))}
