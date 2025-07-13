@@ -41,7 +41,7 @@ const ProductDetailPage = () => {
 
   return (
     <div className="mt-8 p-6 max-w-6xl mx-auto bg-white rounded">
-      <div className="flex gap-6 relative">
+      <div className="flex flex-col lg:flex-row gap-6 relative">
         <div>
           <ImageInspector
             pictures={product.pictures}

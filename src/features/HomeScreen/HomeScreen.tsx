@@ -13,7 +13,7 @@ const images = [
 
 const HomeScreen = () => {
   return (
-    <div className="relative w-full h-[500px]">
+    <div className="relative w-full h-40 md:h-[300px] lg:h-[500px]">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation

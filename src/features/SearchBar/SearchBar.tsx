@@ -44,7 +44,7 @@ export const SearchBar = () => {
     <header className="min-h-[60px]">
       <form
         onSubmit={handleSubmit}
-        className="flex justify-center gap-4 w-full bg-meliYellow py-3 overflow-visible"
+        className="flex flex-wrap md:flex-nowrap items-center justify-center gap-4 w-full bg-meliYellow py-3 overflow-visible"
       >
         <Link to="/" onClick={() => clear()} className="mr-10">
           <img
@@ -77,7 +77,9 @@ export const SearchBar = () => {
           )}
         </div>
 
-        <SearchbarPromo />
+        <div className="hidden md:block">
+          <SearchbarPromo />
+        </div>
       </form>
     </header>
   );

@@ -15,7 +15,7 @@ const MonetaryDetails = ({
   reviews,
 }: MonetaryDetailsProps) => {
   return (
-    <div className="flex-1 border p-6 rounded min-w-[35%]">
+    <div className="flex-1 border p-6 rounded min-w-full lg:min-w-[35%]">
       <p className="text-sm text-gray-500 capitalize mb-1">
         {condition === "new" ? "Nuevo" : "Usado"} | {sold_quantity} vendidos
       </p>
