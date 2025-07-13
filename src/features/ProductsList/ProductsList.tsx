@@ -33,7 +33,7 @@ const ProductsList = () => {
 
   return (
     <div className="w-full px-4 sm:px-0 m:max-w-4xl mx-auto">
-      <ul className="space-y-4 mt-5">
+      <ul className="mt-5">
         {products.map((product) => (
           <SearchProductCard key={product.id} product={product} />
         ))}

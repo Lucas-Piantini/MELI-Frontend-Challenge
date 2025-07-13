@@ -1,6 +1,9 @@
 const ProductListSkeleton = () => {
   return (
-    <ul className="divide-y divide-gray-300 max-w-3xl mx-auto bg-white rounded-md shadow mt-5">
+    <ul
+      data-testid="product-list-skeleton"
+      className="divide-y divide-gray-300 max-w-3xl mx-auto bg-white rounded-md shadow mt-5"
+    >
       {Array.from({ length: 5 }).map((_, i) => (
         <li key={i} className="p-4 min-h-[233px]">
           <div className="flex gap-4">

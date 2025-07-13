@@ -5,6 +5,8 @@ import SearchbarPromo from "./Components/SearchbarPromo";
 import DropdownHistory from "./DropdownHistory/DropdownHistory";
 import { MagnifierIcon } from "../../Components/Icons";
 
+const ALLOWED_REGEX = /^[a-zA-Z0-9\s\-_.áéíóúÁÉÍÓÚñÑ]*$/;
+
 export const SearchBar = () => {
   const navigate = useNavigate();
   const { search, setQuery, query, clear, recentSearches } = useSearchStore();
@@ -14,11 +16,12 @@ export const SearchBar = () => {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
+
+    if (!ALLOWED_REGEX.test(value)) return;
+
     setQuery(value);
 
-    if (debounceRef.current) {
-      clearTimeout(debounceRef.current);
-    }
+    if (debounceRef.current) clearTimeout(debounceRef.current);
 
     debounceRef.current = setTimeout(() => {
       const trimmed = value.trim();
@@ -33,7 +36,10 @@ export const SearchBar = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const trimmed = query.trim();
-    if (trimmed.length < 3) return;
+
+    // ❌ Validar antes de enviar
+    if (!ALLOWED_REGEX.test(trimmed) || trimmed.length < 3) return;
+
     setIsFocused(false);
     clear();
     search(trimmed);

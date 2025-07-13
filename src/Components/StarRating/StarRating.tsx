@@ -13,15 +13,19 @@ const StarRating = ({ rating, total }: StarRatingProps) => {
   const stars = [];
 
   for (let i = 0; i < fullStars; i++) {
-    stars.push(<StarIcon className="w-5 h-5 text-[#3483fa]" />);
+    stars.push(
+      <StarIcon key={`full-${i}`} className="w-5 h-5 text-[#3483fa]" />
+    );
   }
 
   if (hasHalfStar) {
-    stars.push(<HalfStarIcon className="w-5 h-5 text-[#3483fa]" />);
+    stars.push(<HalfStarIcon key="half" className="w-5 h-5 text-[#3483fa]" />);
   }
 
   for (let i = 0; i < emptyStars; i++) {
-    stars.push(<EmptyStarIcon className="w-5 h-5 text-[#3483fa]" />);
+    stars.push(
+      <EmptyStarIcon key={`empty-${i}`} className="w-5 h-5 text-[#3483fa]" />
+    );
   }
 
   return (

@@ -1,5 +1,5 @@
 import type { Product } from "../types/product";
-import type { ProductDetail } from "../types/product";
+import type { ProductDetail } from "../features/ProductDetail/ProductDetailsPage.types";
 
 export const fetchFilteredProducts = async (
   query: string,

@@ -9,6 +9,7 @@ const images = [
   "images/homeBanner2.png",
   "images/homeBanner3.png",
   "images/homeBanner4.png",
+  "images/homeBanner5.png",
 ];
 
 const HomeScreen = () => {
@@ -19,7 +20,9 @@ const HomeScreen = () => {
         navigation
         pagination={{ clickable: true }}
         autoplay={{ delay: 5000 }}
-        loop
+        loop={process.env.NODE_ENV !== "test" && images.length > 1}
+        slidesPerView={1}
+        slidesPerGroup={1}
         className="w-full h-full"
       >
         {images.map((src, index) => (

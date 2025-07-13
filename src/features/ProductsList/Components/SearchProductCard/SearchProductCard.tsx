@@ -19,7 +19,7 @@ const ProductCard = ({ product }: { product: Product }) => {
   } = product;
 
   return (
-    <li className="p-4 bg-white shadow hover:shadow-md transition">
+    <li className="p-4 bg-white shadow hover:shadow-md transition border max-w-full sm:max-w-[800px] mx-auto">
       <div className="flex flex-col sm:flex-row gap-4">
         <img
           src={thumbnail}
