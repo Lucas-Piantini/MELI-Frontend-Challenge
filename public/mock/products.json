@@ -1,0 +1,197 @@
+{
+  "query": "iphone",
+  "paging": {
+    "total": 1500,
+    "offset": 0,
+    "limit": 5
+  },
+  "results": [
+    {
+      "id": "MLA998877665",
+      "title": "Apple iPhone 13 (128 GB) - Medianoche",
+      "price": 1007999,
+      "original_price": 2399999,
+      "discount": 58,
+      "currency_id": "ARS",
+      "condition": "new",
+      "thumbnail": "https://http2.mlstatic.com/D_Q_NP_2X_973345-MLA47781591382_102021-V.webp",
+      "installments": {
+        "quantity": 3,
+        "amount": 335999.67
+      },
+      "shipping": {
+        "free_shipping": true,
+        "arrive_date": "hoy"
+      },
+      "reviews": {
+        "rating_average": 4.9,
+        "total": 55
+      },
+      "official_store_name": "Apple Tienda Oficial",
+      "seller": "Apple",
+      "variations": ["color_medianoche", "color_blanco"]
+    },
+    {
+      "id": "MLA987654321",
+      "title": "Apple iPhone 16 Pro Max 256 GB",
+      "price": 2299000,
+      "original_price": 2599000,
+      "discount": 12,
+      "condition": "new",
+      "thumbnail": "https://http2.mlstatic.com/D_Q_NP_2X_619667-MLA47781882790_102021-V.webp",
+      "reviews": {
+        "rating_average": 4.0,
+        "total": 2
+      },
+      "shipping": {
+        "free_shipping": true,
+        "arrive_date": "mañana"
+      },
+      "official_store_name": "Apple Tienda Oficial",
+      "seller": "Apple",
+      "installments": {
+        "quantity": 6,
+        "amount": 383166.67
+      },
+      "variations": ["color_negro", "color_dorado", "color_gris"]
+    },
+    {
+      "id": "MLA555555555",
+      "title": "iPhone 8 64 GB Plata - Reacondicionado",
+      "price": 412500,
+      "original_price": 580000,
+      "discount": 29,
+      "condition": "used",
+      "thumbnail": "https://http2.mlstatic.com/D_Q_NP_2X_634453-MLA83818446885_042025-V.webp",
+      "installments": {
+        "quantity": 3,
+        "amount": 137500
+      },
+      "shipping": {
+        "free_shipping": true,
+        "arrive_date": "miércoles"
+      },
+      "reviews": {
+        "rating_average": 3.8,
+        "total": 18
+      },
+      "seller": "Tienda Reacondicionados",
+      "variations": ["color_plata"]
+    },
+    {
+      "id": "MLA5555123123",
+      "title": "iPhone 8 64 GB Plata - Reacondicionado",
+      "price": 412500,
+      "original_price": 580000,
+      "discount": 29,
+      "condition": "used",
+      "thumbnail": "https://http2.mlstatic.com/D_Q_NP_2X_634453-MLA83818446885_042025-V.webp",
+      "installments": {
+        "quantity": 3,
+        "amount": 137500
+      },
+      "shipping": {
+        "free_shipping": true,
+        "arrive_date": "miércoles"
+      },
+      "reviews": {
+        "rating_average": 3.8,
+        "total": 18
+      },
+      "seller": "Tienda Reacondicionados",
+      "variations": ["color_plata"]
+    },
+    {
+      "id": "123123",
+      "title": "iPhone 8 64 GB Plata - Reacondicionado",
+      "price": 412500,
+      "original_price": 580000,
+      "discount": 29,
+      "condition": "used",
+      "thumbnail": "https://http2.mlstatic.com/D_Q_NP_2X_634453-MLA83818446885_042025-V.webp",
+      "installments": {
+        "quantity": 3,
+        "amount": 137500
+      },
+      "shipping": {
+        "free_shipping": true,
+        "arrive_date": "miércoles"
+      },
+      "reviews": {
+        "rating_average": 3.8,
+        "total": 18
+      },
+      "seller": "Tienda Reacondicionados",
+      "variations": ["color_plata"]
+    },
+    {
+      "id": "567567",
+      "title": "iPhone 8 64 GB Plata - Reacondicionado",
+      "price": 412500,
+      "original_price": 580000,
+      "discount": 29,
+      "condition": "used",
+      "thumbnail": "https://http2.mlstatic.com/D_Q_NP_2X_634453-MLA83818446885_042025-V.webp",
+      "installments": {
+        "quantity": 3,
+        "amount": 137500
+      },
+      "shipping": {
+        "free_shipping": true,
+        "arrive_date": "miércoles"
+      },
+      "reviews": {
+        "rating_average": 3.8,
+        "total": 18
+      },
+      "seller": "Tienda Reacondicionados",
+      "variations": ["color_plata"]
+    },
+    {
+      "id": "56756",
+      "title": "iPhone 8 64 GB Plata - Reacondicionado",
+      "price": 412500,
+      "original_price": 580000,
+      "discount": 29,
+      "condition": "used",
+      "thumbnail": "https://http2.mlstatic.com/D_Q_NP_2X_634453-MLA83818446885_042025-V.webp",
+      "installments": {
+        "quantity": 3,
+        "amount": 137500
+      },
+      "shipping": {
+        "free_shipping": true,
+        "arrive_date": "miércoles"
+      },
+      "reviews": {
+        "rating_average": 3.8,
+        "total": 18
+      },
+      "seller": "Tienda Reacondicionados",
+      "variations": ["color_plata"]
+    },
+    {
+      "id": "87089089",
+      "title": "iPhone 8 64 GB Plata - Reacondicionado",
+      "price": 412500,
+      "original_price": 580000,
+      "discount": 29,
+      "condition": "used",
+      "thumbnail": "https://http2.mlstatic.com/D_Q_NP_2X_634453-MLA83818446885_042025-V.webp",
+      "installments": {
+        "quantity": 3,
+        "amount": 137500
+      },
+      "shipping": {
+        "free_shipping": true,
+        "arrive_date": "miércoles"
+      },
+      "reviews": {
+        "rating_average": 3.8,
+        "total": 18
+      },
+      "seller": "Tienda Reacondicionados",
+      "variations": ["color_plata"]
+    }
+  ]
+}

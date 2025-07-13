@@ -1,0 +1,1 @@
+declare module "@datobs/react-image-magnifiers";
