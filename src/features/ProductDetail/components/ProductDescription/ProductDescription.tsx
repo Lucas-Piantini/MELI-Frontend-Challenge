@@ -9,7 +9,7 @@ type Props = {
 
 const ProductDescription = ({ description, attributes }: Props) => {
   return (
-    <div className="mt-10 border-t border-gray-300">
+    <div className="pt-8 mt-8 border-t border-gray-300">
       <h2 className="text-lg font-bold mb-2">Descripción</h2>
       <p className="text-sm text-gray-800 mb-6">{description}</p>
 

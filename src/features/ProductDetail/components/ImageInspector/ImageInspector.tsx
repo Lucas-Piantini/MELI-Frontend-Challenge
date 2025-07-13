@@ -1,85 +1,91 @@
-import { useRef, useState, useEffect } from "react";
+import { useState } from "react";
+import ImageCarouselModal from "../ImageCarouselModal/ImageCarouselModal";
 
 interface Props {
   pictures: { id: string; url: string }[];
   title: string;
-  onZoomChange?: (
-    visible: boolean,
-    currentImage: string,
-    bgPosition: string
-  ) => void;
+  onZoomChange: (visible: boolean, img: string, pos: string) => void;
 }
 
 const ImageInspector = ({ pictures = [], title, onZoomChange }: Props) => {
-  const [selImg, setSelImg] = useState<string>(pictures?.[0]?.url || "");
-  const [zoomVisible, setZoomVisible] = useState(false);
-  const [bgPosition, setBgPosition] = useState("0% 0%");
-  const [lensPos, setLensPos] = useState({ x: 0, y: 0 });
+  const [selImg, setSelImg] = useState(pictures?.[0]?.url || "");
+  const [modalOpen, setModalOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const zoomRef = useRef<HTMLDivElement>(null);
-  const lensRef = useRef<HTMLDivElement>(null);
+  const visibleThumbs = pictures.slice(0, 7);
+  const hiddenCount = pictures.length - 7;
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const { left, top, width, height } =
       e.currentTarget.getBoundingClientRect();
     const x = e.clientX - left;
     const y = e.clientY - top;
     const xPercent = (x / width) * 100;
     const yPercent = (y / height) * 100;
-    setBgPosition(`${xPercent}% ${yPercent}%`);
-    setLensPos({ x, y });
+    onZoomChange(true, selImg, `${xPercent}% ${yPercent}%`);
   };
 
-  // Notificar al padre
-  useEffect(() => {
-    onZoomChange?.(zoomVisible, selImg, bgPosition);
-  }, [zoomVisible, selImg, bgPosition]);
+  const handleMouseLeave = () => {
+    onZoomChange(false, "", "0% 0%");
+  };
+
+  const handleImageClick = (index: number) => {
+    setActiveIndex(index);
+    setModalOpen(true);
+  };
 
   return (
-    <div className="flex gap-4 relative">
-      {/* Miniaturas */}
-      <div className="flex flex-col gap-2">
-        {pictures.slice(0, 7).map((pic) => (
+    <div className="flex gap-4 relative flex-col md:flex-row">
+      {/* Thumbnails */}
+      <div className="flex md:flex-col gap-2">
+        {visibleThumbs.map((pic, index) => (
           <img
             key={pic.id}
             src={pic.url}
-            alt="miniatura"
+            alt={`miniatura-${index}`}
             className={`w-16 h-16 object-contain cursor-pointer border ${
               selImg === pic.url ? "border-blue-500" : "border-gray-300"
             }`}
             onMouseEnter={() => setSelImg(pic.url)}
+            onClick={() => handleImageClick(index)}
           />
         ))}
-        {pictures.length > 7 && (
-          <div className="w-16 h-16 border border-gray-300 bg-gray-100 text-sm font-medium text-gray-700 flex items-center justify-center">
-            +{pictures.length - 7}
+
+        {hiddenCount > 0 && (
+          <div
+            onClick={() => handleImageClick(7)}
+            className="w-16 h-16 border border-gray-300 rounded bg-gray-100 text-sm font-medium text-gray-700 flex items-center justify-center cursor-pointer"
+          >
+            +{hiddenCount}
           </div>
         )}
       </div>
 
-      {/* Imagen principal */}
+      {/* Main image */}
       <div
-        className="h-[500px] relative overflow-hidden cursor-zoom-in w-full bg-gray-100 rounded-md"
+        className="relative overflow-hidden cursor-zoom-in bg-gray-100 rounded-md w-full h-[300px] md:h-[500px]"
         onMouseMove={handleMouseMove}
-        onMouseEnter={() => setZoomVisible(true)}
-        onMouseLeave={() => setZoomVisible(false)}
+        onMouseEnter={(e) => handleMouseMove(e)}
+        onMouseLeave={handleMouseLeave}
+        onClick={() =>
+          handleImageClick(pictures.findIndex((p) => p.url === selImg))
+        }
       >
         <img
           src={selImg}
           alt={title}
           className="w-full h-full object-contain"
         />
-        {zoomVisible && (
-          <div
-            ref={lensRef}
-            className="absolute w-20 h-20 shimmer bg-opacity-30 border border-gray-500 pointer-events-none"
-            style={{
-              top: lensPos.y - 40,
-              left: lensPos.x - 40,
-            }}
-          />
-        )}
       </div>
+
+      {modalOpen && (
+        <ImageCarouselModal
+          images={pictures.map((p) => p.url)}
+          activeIndex={activeIndex}
+          onClose={() => setModalOpen(false)}
+          onNavigate={setActiveIndex}
+        />
+      )}
     </div>
   );
 };
