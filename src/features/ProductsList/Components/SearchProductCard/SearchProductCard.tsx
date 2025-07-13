@@ -20,11 +20,11 @@ const ProductCard = ({ product }: { product: Product }) => {
 
   return (
     <li className="p-4 bg-white shadow hover:shadow-md transition">
-      <div className="flex gap-4">
+      <div className="flex flex-col sm:flex-row gap-4">
         <img
           src={thumbnail}
           alt={title}
-          className="w-[196px] h-[196px] object-contain"
+          className="w-full sm:w-[196px] h-[196px] object-contain mx-auto sm:mx-0"
         />
 
         <div className="flex-1 space-y-1">
@@ -43,7 +43,7 @@ const ProductCard = ({ product }: { product: Product }) => {
 
           {seller && <p className="text-sm text-gray-500">Por {seller}</p>}
 
-          <div className="flex justify-between gap-4">
+          <div className="flex flex-col sm:flex-row justify-between gap-4">
             <div className="flex flex-col space-y-1">
               {original_price && (
                 <span className="text-sm text-gray-400 line-through">

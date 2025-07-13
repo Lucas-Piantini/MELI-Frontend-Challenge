@@ -1,14 +1,14 @@
 const ProductDetailSkeleton = () => {
   return (
     <div className="p-6 max-w-6xl mx-auto">
-      <div className="flex gap-10">
-        <div className="flex gap-4">
+      <div className="flex flex-col md:flex-row gap-10">
+        <div className="flex flex-col md:flex-row gap-4">
           <div className="flex flex-col gap-2">
             {Array.from({ length: 4 }).map((_, i) => (
               <div key={i} className="w-16 h-16 shimmer rounded" />
             ))}
           </div>
-          <div className="w-[400px] h-[400px] shimmer rounded" />
+          <div className="w-full md:w-[400px] h-[400px] shimmer rounded" />
         </div>
 
         <div className="flex-1 space-y-4">

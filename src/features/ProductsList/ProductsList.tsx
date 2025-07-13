@@ -7,7 +7,6 @@ import ProductListSkeleton from "./Components/ProductListSkeleton/ProductListSke
 
 const ProductsList = () => {
   const navigate = useNavigate();
-
   const { query } = useParams();
   const { products, isLoading, search, paging, hasSearched, error } =
     useSearchStore();
@@ -29,28 +28,25 @@ const ProductsList = () => {
     search(query!, newOffset);
   };
 
-  if (isLoading) {
-    return <ProductListSkeleton />;
-  }
-
-  if (error) {
-    navigate("/error");
-  }
+  if (isLoading) return <ProductListSkeleton />;
+  if (error) navigate("/error");
 
   return (
-    <div className="max-w-4xl mx-auto">
-      <ul className="divide-y divide-gray-300 bg-white rounded-md shadow mt-5">
+    <div className="w-full px-4 sm:px-0 m:max-w-4xl mx-auto">
+      <ul className="space-y-4 mt-5">
         {products.map((product) => (
           <SearchProductCard key={product.id} product={product} />
         ))}
       </ul>
 
-      <Paginator
-        total={paging.total}
-        offset={paging.offset}
-        limit={paging.limit}
-        onPageChange={handlePageChange}
-      />
+      <div className="mt-6">
+        <Paginator
+          total={paging.total}
+          offset={paging.offset}
+          limit={paging.limit}
+          onPageChange={handlePageChange}
+        />
+      </div>
     </div>
   );
 };
