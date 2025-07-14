@@ -1,3 +1,4 @@
+// Zoom de imagen
 import { useState } from "react";
 import ImageCarouselModal from "../ImageCarouselModal/ImageCarouselModal";
 

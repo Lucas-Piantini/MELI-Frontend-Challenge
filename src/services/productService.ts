@@ -1,3 +1,4 @@
+// Funciones para obtener productos del mock
 import type { Product } from "../types/product";
 import type { ProductDetail } from "../features/ProductDetail/ProductDetailsPage.types";
 

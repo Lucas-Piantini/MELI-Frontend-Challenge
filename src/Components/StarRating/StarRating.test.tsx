@@ -1,3 +1,4 @@
+// Pruebas del componente StarRating
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import StarRating from "./StarRating";

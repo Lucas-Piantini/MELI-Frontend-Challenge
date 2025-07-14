@@ -1,3 +1,4 @@
+// Tipos para los detalles de producto
 export interface ProductDetail {
   id: string;
   title: string;

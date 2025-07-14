@@ -1,3 +1,4 @@
+// Botón promocional
 const SearchbarPromo = () => {
   return (
     <button

@@ -1,3 +1,4 @@
+// Historial de búsquedas
 import { useNavigate } from "react-router-dom";
 import { useSearchStore } from "../../../stores/SearchStore";
 import { ClockIcon } from "../../../Components/Icons/index";

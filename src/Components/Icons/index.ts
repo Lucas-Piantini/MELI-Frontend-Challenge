@@ -1,3 +1,4 @@
+// Exporta todos los iconos
 export { default as ClockIcon } from "./ClockIcon";
 export { default as EmptyStarIcon } from "./EmptyStarIcon";
 export { default as HalfStarIcon } from "./HalfStarIcon";

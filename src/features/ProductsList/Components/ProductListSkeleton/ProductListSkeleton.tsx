@@ -1,3 +1,4 @@
+// Skeleton del listado de productos
 const ProductListSkeleton = () => {
   return (
     <ul

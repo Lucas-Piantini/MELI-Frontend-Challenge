@@ -1,3 +1,4 @@
+// Pruebas del componente ProductList
 import { describe, it, expect, vi, beforeEach, Mock } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
 import { MemoryRouter, Route, Routes, useNavigate } from "react-router-dom";

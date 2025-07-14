@@ -1,3 +1,4 @@
+// Lista de productos
 import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSearchStore } from "../../stores/SearchStore";

@@ -1,3 +1,4 @@
+// Layout principal con la barra de búsqueda
 import { SearchBar } from "../features/SearchBar/SearchBar";
 import { Outlet } from "react-router-dom";
 

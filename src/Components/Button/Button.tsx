@@ -1,3 +1,4 @@
+// Botón reutilizable
 interface ButtonProps {
   label: string;
   onClick?: () => void;

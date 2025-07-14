@@ -1,3 +1,4 @@
+// Tarjeta de producto en los resultados
 import { Link } from "react-router-dom";
 import type { Product } from "../../../../types/product";
 import StarRating from "../../../../Components/StarRating/StarRating";

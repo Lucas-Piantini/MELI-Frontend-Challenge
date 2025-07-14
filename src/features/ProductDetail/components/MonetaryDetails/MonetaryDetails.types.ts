@@ -1,3 +1,4 @@
+// Archivo del proyecto
 export default interface MonetaryDetailsProps {
   title: string;
   price: number;
