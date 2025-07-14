@@ -1,3 +1,4 @@
+// Carrusel de imágenes en modal
 import { useEffect } from "react";
 
 interface Props {

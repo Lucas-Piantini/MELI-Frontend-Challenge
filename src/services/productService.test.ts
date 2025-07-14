@@ -1,3 +1,4 @@
+// Pruebas del componente productService
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { fetchFilteredProducts, fetchProductById } from "./productService";
 import type { Product } from "../types/product";

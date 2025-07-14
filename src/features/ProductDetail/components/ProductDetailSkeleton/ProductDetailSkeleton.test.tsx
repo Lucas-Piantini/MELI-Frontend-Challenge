@@ -1,3 +1,4 @@
+// Pruebas del componente ProductDetailSkeleton
 import { describe, it, expect } from "vitest";
 import { render } from "@testing-library/react";
 import ProductDetailSkeleton from "./ProductDetailSkeleton";

@@ -1,3 +1,4 @@
+// Componente para paginar resultados
 interface Props {
   total: number;
   offset: number;

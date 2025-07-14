@@ -1,3 +1,4 @@
+// Pruebas del componente ErrorScreen
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import ErrorScreen from "./ErrorScreen";

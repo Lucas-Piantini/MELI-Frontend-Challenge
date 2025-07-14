@@ -1,3 +1,4 @@
+// Pruebas del componente SearchBar
 import { describe, it, vi, beforeEach, expect } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";

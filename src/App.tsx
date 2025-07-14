@@ -1,3 +1,4 @@
+// Componente principal
 import { BrowserRouter } from 'react-router-dom'
 import Routes from '../AppRoutes'
 

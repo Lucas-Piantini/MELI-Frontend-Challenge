@@ -1,3 +1,4 @@
+// Tipos del store de búsqueda
 import { Product } from "../types/product";
 
 export interface Paging {

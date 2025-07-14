@@ -1,3 +1,4 @@
+// Descripción del producto
 type Props = {
   description: string;
   attributes: {

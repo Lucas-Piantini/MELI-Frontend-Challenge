@@ -1,3 +1,4 @@
+// Estado global de búsqueda
 import { create } from "zustand";
 import { fetchFilteredProducts } from "../services/productService";
 import type { SearchState } from "./SearchStore.types";

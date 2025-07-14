@@ -1,3 +1,4 @@
+// Página de detalle de producto
 import { useEffect, useState, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import type { ProductDetail } from "./ProductDetailsPage.types";

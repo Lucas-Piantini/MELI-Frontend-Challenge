@@ -1,3 +1,4 @@
+// Muestra estrellas de calificación
 import { EmptyStarIcon, HalfStarIcon, StarIcon } from "../Icons";
 
 interface StarRatingProps {

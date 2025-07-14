@@ -1,3 +1,4 @@
+// Capa oscura sobre la imagen
 import React from "react";
 
 interface Props {

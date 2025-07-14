@@ -1,3 +1,4 @@
+// Definición de la interfaz Product
 export interface Product {
   id: string;
   title: string;

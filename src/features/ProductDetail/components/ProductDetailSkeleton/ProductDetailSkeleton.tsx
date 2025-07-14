@@ -1,3 +1,4 @@
+// Skeleton mientras carga el detalle
 const ProductDetailSkeleton = () => {
   return (
     <div className="p-6 max-w-6xl mx-auto">

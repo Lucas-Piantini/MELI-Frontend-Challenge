@@ -1,3 +1,4 @@
+// Definición de rutas
 import { Routes as RouterRoutes, Route } from "react-router-dom";
 import ProductDetailPage from "./src/features/ProductDetail/ProductDetailPage";
 import { MainLayout } from "./src/layouts/MainLayout";
