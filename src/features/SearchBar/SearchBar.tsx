@@ -37,9 +37,8 @@ export const SearchBar = () => {
     e.preventDefault();
     const trimmed = query.trim();
 
-    // ❌ Validar antes de enviar
     if (!ALLOWED_REGEX.test(trimmed) || trimmed.length < 3) return;
-
+    //se limpia el focus para evitar que el dropdown se quede abierto
     setIsFocused(false);
     clear();
     search(trimmed);

@@ -34,6 +34,7 @@ const ProductCard = ({ product }: { product: Product }) => {
             </span>
           )}
 
+          {/* Aqui juntaria Analytics si el usuario clickeo un producto */}
           <Link
             to={`/details/${id}`}
             className="block text-lg font-semibold text-gray-800 hover:underline"

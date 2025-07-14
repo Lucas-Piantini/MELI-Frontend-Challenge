@@ -8,6 +8,9 @@ import ProductDescription from "./components/ProductDescription/ProductDescripti
 import MonetaryDetails from "./components/MonetaryDetails/MonetaryDetails";
 import ImageZoomOverlay from "../ProductDetail/components/ImageOverlay/ImageOverlay";
 
+//  En este componente se pueden juntar analytics si el usuario clickea sobre las fotos
+//  o si se hace zoom en la foto, o si agrega al carrito, etc.
+
 const ProductDetailPage = () => {
   const { id } = useParams();
   const [product, setProduct] = useState<ProductDetail | null>(null);

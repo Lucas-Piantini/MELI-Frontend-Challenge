@@ -27,7 +27,7 @@ export const useSearchStore = create<SearchState>((set, get) => {
       const current = get().recentSearches;
       const updated = [query, ...current.filter((q) => q !== query)].slice(
         0,
-        6
+        6,
       );
       set({ recentSearches: updated });
       localStorage.setItem("recentSearches", JSON.stringify(updated));
@@ -46,6 +46,7 @@ export const useSearchStore = create<SearchState>((set, get) => {
       });
 
       try {
+        // Aqui podria juntar analytics si el usuario buscó un producto
         const data = await fetchFilteredProducts(query, offset, limit);
         set({
           products: data.results,
