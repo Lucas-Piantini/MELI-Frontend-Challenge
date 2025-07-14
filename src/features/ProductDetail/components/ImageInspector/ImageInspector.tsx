@@ -1,5 +1,4 @@
-// Zoom de imagen
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ImageCarouselModal from "../ImageCarouselModal/ImageCarouselModal";
 
 interface Props {
@@ -12,10 +11,23 @@ const ImageInspector = ({ pictures = [], title, onZoomChange }: Props) => {
   const [selImg, setSelImg] = useState(pictures?.[0]?.url || "");
   const [modalOpen, setModalOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [thumbLimit, setThumbLimit] = useState(7);
 
-  const visibleThumbs = pictures.slice(0, 7);
-  const hiddenCount = pictures.length - 7;
+  // Ajusta cuántas miniaturas mostrar según el ancho de pantalla
+  useEffect(() => {
+    const updateThumbLimit = () => {
+      setThumbLimit(window.innerWidth < 640 ? 4 : 7); // sm:640px
+    };
 
+    updateThumbLimit();
+    window.addEventListener("resize", updateThumbLimit);
+    return () => window.removeEventListener("resize", updateThumbLimit);
+  }, []);
+
+  const visibleThumbs = pictures.slice(0, thumbLimit);
+  const hiddenCount = pictures.length - thumbLimit;
+
+  // Maneja el movimiento del mouse para el zoom
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const { left, top, width, height } =
       e.currentTarget.getBoundingClientRect();
@@ -26,10 +38,12 @@ const ImageInspector = ({ pictures = [], title, onZoomChange }: Props) => {
     onZoomChange(true, selImg, `${xPercent}% ${yPercent}%`);
   };
 
+  // Maneja el mouse salir de la imagen para desactivar el zoom
   const handleMouseLeave = () => {
     onZoomChange(false, "", "0% 0%");
   };
 
+  // Maneja el clic en las miniaturas para abrir el modal
   const handleImageClick = (index: number) => {
     setActiveIndex(index);
     setModalOpen(true);
@@ -37,8 +51,8 @@ const ImageInspector = ({ pictures = [], title, onZoomChange }: Props) => {
 
   return (
     <div className="flex gap-4 relative flex-col md:flex-row">
-      {/* Thumbnails */}
-      <div className="flex md:flex-col gap-2">
+      {/* Thumbnails  en fila o culumna segun tamaño de pantalla*/}
+      <div className="flex md:flex-col gap-2 overflow-x-auto md:overflow-visible">
         {visibleThumbs.map((pic, index) => (
           <img
             key={pic.id}
@@ -52,9 +66,10 @@ const ImageInspector = ({ pictures = [], title, onZoomChange }: Props) => {
           />
         ))}
 
+        {/* Botón para ver más miniaturas si hay más de las que se muestran */}
         {hiddenCount > 0 && (
           <div
-            onClick={() => handleImageClick(7)}
+            onClick={() => handleImageClick(thumbLimit)}
             className="w-16 h-16 border border-gray-300 rounded bg-gray-100 text-sm font-medium text-gray-700 flex items-center justify-center cursor-pointer"
           >
             +{hiddenCount}
@@ -62,7 +77,7 @@ const ImageInspector = ({ pictures = [], title, onZoomChange }: Props) => {
         )}
       </div>
 
-      {/* Main image */}
+      {/* Imagen principal */}
       <div
         className="relative overflow-hidden cursor-zoom-in bg-gray-100 rounded-md w-full h-[300px] md:h-[500px]"
         onMouseMove={handleMouseMove}
@@ -79,6 +94,7 @@ const ImageInspector = ({ pictures = [], title, onZoomChange }: Props) => {
         />
       </div>
 
+      {/* Modal de fotos */}
       {modalOpen && (
         <ImageCarouselModal
           images={pictures.map((p) => p.url)}

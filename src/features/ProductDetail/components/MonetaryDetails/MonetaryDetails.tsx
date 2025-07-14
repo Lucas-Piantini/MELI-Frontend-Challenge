@@ -1,4 +1,4 @@
-// Información de precios
+// Información de precios y detalles monetarios del producto.
 import Button from "../../../../Components/Button/Button";
 import StarRating from "../../../../Components/StarRating/StarRating";
 import MonetaryDetailsProps from "./MonetaryDetails.types";

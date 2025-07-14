@@ -2,10 +2,11 @@
 import type { Product } from "../types/product";
 import type { ProductDetail } from "../features/ProductDetail/ProductDetailsPage.types";
 
+// Busca el listado de productos segun la busqueda y la pagina
 export const fetchFilteredProducts = async (
   query: string,
   offset = 0,
-  limit = 4
+  limit = 4,
 ): Promise<{
   results: Product[];
   paging: { total: number; offset: number; limit: number };
@@ -21,7 +22,7 @@ export const fetchFilteredProducts = async (
   const data: { results: Product[] } = await res.json();
 
   const filtered = data.results.filter((p: Product) =>
-    p.title.toLowerCase().includes(query.toLowerCase())
+    p.title.toLowerCase().includes(query.toLowerCase()),
   );
 
   const paginated = filtered.slice(offset, offset + limit);
@@ -36,6 +37,7 @@ export const fetchFilteredProducts = async (
   };
 };
 
+// Trae los detalles del producto
 export const fetchProductById = async (id: string): Promise<ProductDetail> => {
   await new Promise((resolve) => setTimeout(resolve, 2000)); // delay artificial
   const res = await fetch(`/mock/${id}.json`);

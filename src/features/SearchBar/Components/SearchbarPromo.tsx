@@ -1,11 +1,11 @@
-// Botón promocional
+// Banner promocional que te lleva a otra pagina
 const SearchbarPromo = () => {
   return (
     <button
       onClick={() =>
         window.open(
           "https://www.mercadolibre.com.ar/suscripciones/melimas#origin=banner-menu",
-          "_blank"
+          "_blank",
         )
       }
       className="flex items-center ml-10"

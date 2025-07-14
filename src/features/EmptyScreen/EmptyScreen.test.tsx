@@ -9,10 +9,10 @@ describe("EmptyScreen", () => {
 
     expect(screen.getByAltText("Sin resultados")).toBeInTheDocument();
     expect(
-      screen.getByText("No encontramos lo que buscás")
+      screen.getByText("No encontramos lo que buscás"),
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/Probá con otro término de búsqueda/i)
+      screen.getByText(/Probá con otro término de búsqueda/i),
     ).toBeInTheDocument();
   });
 });

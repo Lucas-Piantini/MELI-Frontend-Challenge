@@ -1,4 +1,4 @@
-// Pantalla de error genérica
+// Pantalla de error
 const ErrorScreen = () => {
   return (
     <div className="flex flex-col items-center justify-center mt-20 text-center px-4">

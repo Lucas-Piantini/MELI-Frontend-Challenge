@@ -14,6 +14,8 @@ const ImageCarouselModal = ({
   onClose,
   onNavigate,
 }: Props) => {
+  // Actualiza los estados del carrusel con las teclas de flecha
+  // y cierra el modal con Escape
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
       if (e.key === "ArrowLeft") {

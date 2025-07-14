@@ -1,5 +1,5 @@
-// Capa oscura sobre la imagen
-import React from "react";
+// Este componente muestra la imagen principal pero ampliada y con un efecto
+// de zoom al pasar el mouse sobre ella.
 
 interface Props {
   imageUrl: string;

@@ -19,6 +19,7 @@ const Paginator = ({ total, offset, limit, onPageChange }: Props) => {
 
   return (
     <div className="flex justify-center gap-2 mt-6 pb-6 flex-wrap">
+      {/* Boton que muestra si hay resultados anteriores al actual */}
       {currentPage > 1 && (
         <button
           onClick={() => onPageChange(currentPage - 1)}
@@ -28,6 +29,7 @@ const Paginator = ({ total, offset, limit, onPageChange }: Props) => {
         </button>
       )}
 
+      {/* Botones numericos de paginación */}
       {getVisiblePages().map((page) => (
         <button
           key={page}
@@ -42,6 +44,7 @@ const Paginator = ({ total, offset, limit, onPageChange }: Props) => {
         </button>
       ))}
 
+      {/* Botones de que se muestra si hay resultados posterior al actual */}
       {currentPage < totalPages && (
         <button
           onClick={() => onPageChange(currentPage + 1)}

@@ -11,6 +11,7 @@ const DropdownHistory = ({ setIsFocused }: Props) => {
   const { search, setQuery, clear, recentSearches } = useSearchStore();
   const navigate = useNavigate();
 
+  // busqueda al clickear una busqueda del historial
   const handleSelectRecent = (term: string) => {
     setQuery(term);
     clear();
