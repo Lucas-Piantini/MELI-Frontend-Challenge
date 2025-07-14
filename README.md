@@ -91,6 +91,7 @@ Si tuviera más tiempo me gustaría:
 - Crear una interfaz responsive más elaborada, no solo reubicando elementos sino usando componentes específicos para mobile.
 - Ampliar el mock para que la barra de búsqueda permita filtrar por categorías, y para que más productos tengan datos completos.
 - Añadir una sección de productos destacados en la Home con un diseño de tarjeta alternativo.
+- Cambiar la configuracion para que hayan carpetas con rutas globales como por EJ: @src, @assets
 
 ---
 
