@@ -26,7 +26,13 @@ La aplicación simula una versión reducida del sitio de Mercado Libre. Permite 
 - Zustand (manejo de estado)
 - Tailwind CSS (estilos)
 - Vitest + Testing Library (testeo)
-- TypeScript
+- TypeScriptHusky: Configurado para ejecutar tareas automáticamente antes de hacer push. Actualmente:
+
+  Formatea el código con Prettier.
+
+  Ejecuta los tests con Vitest.
+
+  Esto asegura consistencia en el estilo del código y que no se suban cambios que rompan la aplicación.
 
 ### 📌 Decisiones técnicas
 
