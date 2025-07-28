@@ -46,7 +46,7 @@ La aplicación simula una versión reducida del sitio de Mercado Libre. Permite 
 ## 📦 Instalación
 
 ```bash
-git clone https://github.com/goncy/mercadolibre-details-challenge.git
+git clone https://github.com/Lucas-Piantini/Tareas-GlobalLogic.git
 cd meli-frontend-challenge
 npm install
 npm run dev
